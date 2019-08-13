@@ -5,10 +5,13 @@ import Filters from "../Filters/Filters";
 import hotelResultService from "../../services/hotel-result/hotel-result.service";
 
 const App = () => {
+  // State
   const [hotels, updateHotels] = useState([]);
   const [filteredHotels, updateFilteredHotels] = useState([]);
   const [sort, updateSort] = useState("Recommended");
+  const [searchTerm, updateSearch] = useState("");
 
+  // Helper Functions
   const filterHotels = searchValue => {
     let filtered = hotels.filter(hotel => {
       let hotelName = hotel.hotelStaticContent.name.toLowerCase();
@@ -35,13 +38,14 @@ const App = () => {
   };
 
   const getHotels = () => {
-    if (filteredHotels.length) {
+    if (filteredHotels.length || searchTerm) {
       return sortHotels(filteredHotels, sort);
     } else {
       return sortHotels(hotels, sort);
     }
   };
 
+  // API Call
   useEffect(() => {
     hotelResultService
       .get()
@@ -57,9 +61,12 @@ const App = () => {
     <div className="app-container">
       <div className="content">
         <Filters
+          searchTerm={searchTerm}
           sort={sort}
-          updateSort={updateSort}
           filterHotels={filterHotels}
+          updateSort={updateSort}
+          updateSearch={updateSearch}
+          updateFilteredHotels={updateFilteredHotels}
         />
         <Hotels hotels={getHotels()} />
       </div>
