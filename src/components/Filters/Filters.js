@@ -18,7 +18,7 @@ const Filters = ({ sort, updateSort, filterHotels }) => {
           updateFilterSearch={updateFilterSearch}
           searchTerm={searchTerm}
         />
-        <Price />
+        <Price sort={sort} updateSort={updateSort} />
         {/* <Reset resetSearch={resetSearch} /> */}
       </div>
     </div>

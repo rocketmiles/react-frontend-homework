@@ -7,10 +7,7 @@ import hotelResultService from "../../services/hotel-result/hotel-result.service
 const App = () => {
   const [hotels, updateHotels] = useState([]);
   const [filteredHotels, updateFilteredHotels] = useState([]);
-
-  const [sort, updateSort] = useState("recommended");
-
-  console.log("hotels", hotels);
+  const [sort, updateSort] = useState("Recommended");
 
   const filterHotels = searchValue => {
     let filtered = hotels.filter(hotel => {
@@ -22,17 +19,17 @@ const App = () => {
   };
 
   const sortHotels = (hotels, sortBy) => {
-    if (sortBy === "recommended") {
+    if (sortBy === "Recommended") {
       return hotels.sort(
-        (a, b) => a.hotelStaticContent.rating - b.hotelStaticContent.rating
+        (a, b) => b.hotelStaticContent.rating - a.hotelStaticContent.rating
       );
-    } else if (sortBy === "ascending") {
-      return hotels.sort(
-        (a, b) => b.lowestAveragePrice.amount - a.lowestAveragePrice.amount
-      );
-    } else if (sortBy === "descending") {
+    } else if (sortBy === "Ascending") {
       return hotels.sort(
         (a, b) => a.lowestAveragePrice.amount - b.lowestAveragePrice.amount
+      );
+    } else if (sortBy === "Descending") {
+      return hotels.sort(
+        (a, b) => b.lowestAveragePrice.amount - a.lowestAveragePrice.amount
       );
     }
   };
