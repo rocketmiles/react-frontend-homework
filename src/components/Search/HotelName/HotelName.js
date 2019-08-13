@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const HotelName = ({ searchTerm, updateFilterSearch }) => {
+const HotelName = props => {
+  const { searchTerm, updateFilterSearch } = props;
+
   return (
     <div className="filter-container">
       <h3>Hotel Name</h3>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "../../Image/Image";
 
-const HotelCard = ({ hotel }) => {
+const HotelCard = props => {
+  const { hotel } = props;
   const image = hotel.hotelStaticContent.mainImage.url;
 
   return (
@@ -24,6 +25,7 @@ const HotelCard = ({ hotel }) => {
           {hotel.lowestAveragePrice.amount}
         </span>
         <span className="rewards">{hotel.rewards.miles} miles</span>
+        <span className="rating">Rated {hotel.hotelStaticContent.rating}</span>
         <button className="button">Select</button>
       </div>
     </div>

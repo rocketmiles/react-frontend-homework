@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-import defaultImage from "./house-placeholder.jpg";
+const defaultImage =
+  "https://d2fugp2urx2h4c.cloudfront.net/house-placeholder.jpg";
 
-const Image = ({ src, alt }) => {
+const ImageContainer = ({ src, alt }) => {
   const [image, updateImage] = useState(src);
 
   const onError = () => {
@@ -12,4 +13,4 @@ const Image = ({ src, alt }) => {
   return <img className="image" src={image} alt={alt} onError={onError} />;
 };
 
-export default Image;
+export default ImageContainer;

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Filters.style.scss";
-import HotelName from "./HotelName/HotelName";
-import Price from "./Price/Price";
-import Reset from "./Reset/Reset";
+import HotelName from "../HotelName/HotelName";
+import Price from "../Price/Price";
+import Reset from "../Reset/Reset";
 
 const Filters = ({
   sort,

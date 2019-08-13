@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hotels.style.scss";
-import HotelCard from "./HotelCard/HotelCard";
+import HotelCard from "../HotelCard/HotelCard";
 
 const Hotels = ({ hotels, error, isEmpty, fetchApi }) => {
   if (error) {
@@ -21,9 +21,9 @@ const Hotels = ({ hotels, error, isEmpty, fetchApi }) => {
   } else {
     return (
       <div className="hotel-list">
-        {hotels.map(hotel => (
-          <HotelCard key={hotel.id} hotel={hotel} />
-        ))}
+        {hotels.map(hotel => {
+          return <HotelCard key={hotel.id} hotel={hotel} />;
+        })}
       </div>
     );
   }

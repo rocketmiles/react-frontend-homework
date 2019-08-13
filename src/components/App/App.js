@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.style.scss";
-import Hotels from "../Hotels/Hotels";
-import Filters from "../Filters/Filters";
+import { Hotels, HotelCard } from "../HotelList";
+import { Filters } from "../Search";
 import hotelResultService from "../../services/hotel-result/hotel-result.service";
 
 const App = () => {
