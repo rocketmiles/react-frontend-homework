@@ -10,6 +10,7 @@ const App = () => {
   const [filteredHotels, updateFilteredHotels] = useState([]);
   const [sort, updateSort] = useState("Recommended");
   const [searchTerm, updateSearch] = useState("");
+  const [error, updateError] = useState("");
 
   // Helper Functions
   const filterHotels = searchValue => {
@@ -37,7 +38,7 @@ const App = () => {
     }
   };
 
-  const getHotels = () => {
+  const renderHotelList = () => {
     if (filteredHotels.length || searchTerm) {
       return sortHotels(filteredHotels, sort);
     } else {
@@ -45,16 +46,23 @@ const App = () => {
     }
   };
 
-  // API Call
-  useEffect(() => {
+  const fetchApi = () => {
     hotelResultService
       .get()
       .then(response => {
+        if (error) {
+          updateError("");
+        }
         updateHotels(response.results.hotels);
       })
       .catch(err => {
-        console.log("err", err);
+        updateError("Looks like there was some difficulty loading the results");
       });
+  };
+
+  // API Call
+  useEffect(() => {
+    fetchApi();
   }, []);
 
   return (
@@ -69,8 +77,10 @@ const App = () => {
           updateFilteredHotels={updateFilteredHotels}
         />
         <Hotels
+          error={error}
+          fetchApi={fetchApi}
           isEmpty={searchTerm && !filteredHotels.length}
-          hotels={getHotels()}
+          hotels={renderHotelList()}
         />
       </div>
     </div>

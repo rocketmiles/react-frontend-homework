@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from "react";
 import HotelCard from "./HotelCard/HotelCard";
 
-const Hotels = ({ hotels, isEmpty }) => {
-  if (isEmpty) {
+const Hotels = ({ hotels, error, isEmpty, fetchApi }) => {
+  if (error) {
+    return (
+      <div className="hotel-list">
+        {error}
+        <button className="button" onClick={fetchApi}>
+          Try Again
+        </button>
+      </div>
+    );
+  } else if (isEmpty) {
     return (
       <div className="hotel-list">
         Oh no! Looks like there are no matching hotels!
