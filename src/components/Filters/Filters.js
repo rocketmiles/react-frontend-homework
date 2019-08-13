@@ -7,8 +7,8 @@ const Filters = ({
   sort,
   updateSort,
   searchTerm,
-  updateSearch,
   filterHotels,
+  updateSearch,
   updateFilteredHotels
 }) => {
   const updateFilterSearch = searchTerm => {

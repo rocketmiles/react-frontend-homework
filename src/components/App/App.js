@@ -68,7 +68,10 @@ const App = () => {
           updateSearch={updateSearch}
           updateFilteredHotels={updateFilteredHotels}
         />
-        <Hotels hotels={getHotels()} />
+        <Hotels
+          isEmpty={searchTerm && !filteredHotels.length}
+          hotels={getHotels()}
+        />
       </div>
     </div>
   );
