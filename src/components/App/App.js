@@ -7,8 +7,43 @@ import hotelResultService from "../../services/hotel-result/hotel-result.service
 const App = () => {
   const [hotels, updateHotels] = useState([]);
   const [filteredHotels, updateFilteredHotels] = useState([]);
-  const [searchTerm, updateSearch] = useState("");
-  const [sort, updateSort] = useState("");
+
+  const [sort, updateSort] = useState("recommended");
+
+  console.log("hotels", hotels);
+
+  const filterHotels = searchValue => {
+    let filtered = hotels.filter(hotel => {
+      let hotelName = hotel.hotelStaticContent.name.toLowerCase();
+      let searchValueLowerCase = searchValue.toLowerCase();
+      return hotelName.includes(searchValueLowerCase);
+    });
+    updateFilteredHotels(filtered);
+  };
+
+  const sortHotels = (hotels, sortBy) => {
+    if (sortBy === "recommended") {
+      return hotels.sort(
+        (a, b) => a.hotelStaticContent.rating - b.hotelStaticContent.rating
+      );
+    } else if (sortBy === "ascending") {
+      return hotels.sort(
+        (a, b) => b.lowestAveragePrice.amount - a.lowestAveragePrice.amount
+      );
+    } else if (sortBy === "descending") {
+      return hotels.sort(
+        (a, b) => a.lowestAveragePrice.amount - b.lowestAveragePrice.amount
+      );
+    }
+  };
+
+  const getHotels = () => {
+    if (filteredHotels.length) {
+      return sortHotels(filteredHotels, sort);
+    } else {
+      return sortHotels(hotels, sort);
+    }
+  };
 
   useEffect(() => {
     hotelResultService
@@ -26,11 +61,10 @@ const App = () => {
       <div className="content">
         <Filters
           sort={sort}
-          searchTerm={searchTerm}
           updateSort={updateSort}
-          updateSearch={updateSearch}
+          filterHotels={filterHotels}
         />
-        <Hotels hotels={hotels} />
+        <Hotels hotels={getHotels()} />
       </div>
     </div>
   );

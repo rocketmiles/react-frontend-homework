@@ -3,13 +3,23 @@ import HotelName from "./HotelName/HotelName";
 import Price from "./Price/Price";
 import Reset from "./Reset/Reset";
 
-const Filters = () => {
+const Filters = ({ sort, updateSort, filterHotels }) => {
+  const [searchTerm, updateSearch] = useState("");
+
+  const updateFilterSearch = searchTerm => {
+    updateSearch(searchTerm);
+    filterHotels(searchTerm);
+  };
+
   return (
     <div>
       <div className="filters">
-        <HotelName />
+        <HotelName
+          updateFilterSearch={updateFilterSearch}
+          searchTerm={searchTerm}
+        />
         <Price />
-        <Reset />
+        {/* <Reset resetSearch={resetSearch} /> */}
       </div>
     </div>
   );
