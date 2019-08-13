@@ -1,0 +1,29 @@
+.hotel-list {
+  max-width: 1000px;
+  min-height: calc(100vh - 500px);
+  width: 100%;
+  margin: 30px auto;
+  &.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: 700;
+    flex-direction: column;
+    height: calc(100vh - 500px);
+
+    .button {
+      background-color: #2d81ff;
+      margin-top: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      color: #fff;
+      border-radius: 0.25em;
+      padding: 14px 36px;
+      font-size: 16px;
+    }
+  }
+  > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 
 const Price = ({ sort, updateSort }) => {
   return (
-    <div>
-      Price
+    <div className="price-container">
+      <h3>Sort By Price</h3>
       <select
         name="Sort Price"
         value={sort}
