@@ -9,6 +9,7 @@ const App = () => {
     useEffect(() => {
         hotelResultService.get().then(response => {
             setHotels(response.results.hotels)
+            console.log(response.results.hotels)
         })
     }, []);
 
