@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-//props passed into this component will be filtered/sorted in Search controls, this component
+import React, { useState} from 'react';
+
+//props passed into this component will be filtered/sorted in SearchControls
+//regardless of what SearchControls does, this component will render a list of hotels
 export default function HotelList ({
     hotels
 }) {

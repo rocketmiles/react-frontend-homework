@@ -11,6 +11,11 @@ export const testArray = [
                 stateCode: 'MN',
             },
             hotelId: 443,
+            mainImage: {
+                category: 'EXTERIOR',
+                source: 'SOURCE1',
+                url: 'http://www.hotelphoto.com/speedstop'
+            },
             name: 'Motorsport Speed Stop Inn',
             neighborhoodName: 'Midway',
             rating: '4.9',
@@ -36,6 +41,11 @@ export const testArray = [
                 stateCode: 'MN',
             },
             hotelId: 9896,
+            mainImage: {
+                category: 'EXTERIOR',
+                source: 'SOURCE1',
+                url: 'http://www.hotelphoto.com/rcvending'
+            },
             name: 'Royal Crown Hotel and Vending Machine',
             neighborhoodName: 'Phillips',
             rating: '5.5',
@@ -61,6 +71,11 @@ export const testArray = [
                 stateCode: 'MN',
             },
             hotelId: 78,
+            mainImage: {
+                category: 'EXTERIOR',
+                source: 'SOURCE1',
+                url: 'http://www.hotelphoto.com/EDZ'
+            },
             name: 'Excursions by Dominic Zantigo',
             neighborhoodName: 'Downtown East',
             rating: '9.4',
@@ -86,6 +101,11 @@ export const testArray = [
                 stateCode: 'MN',
             },
             hotelId: 909,
+            mainImage: {
+                category: 'EXTERIOR',
+                source: 'SOURCE1',
+                url: 'http://www.hotelphoto.com/MCII'
+            },
             name: 'Mill City Island Inn',
             neighborhoodName: 'St. Anthony',
             rating: '9',
@@ -112,6 +132,11 @@ export const testArray = [
             },
             hotelId: 5456,
             name: 'North Branch Riverview Suites',
+            mainImage: {
+                category: 'EXTERIOR',
+                source: 'SOURCE1',
+                url: 'http://www.hotelphoto.com/NBRsuites'
+            },
             neighborhoodName: 'Camden',
             rating: '8.2',
             stars: '3.5'
