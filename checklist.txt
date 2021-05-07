@@ -1,0 +1,33 @@
+Out of the box, the app makes a call to an API with a list of hotels + their details
+The app displays a full list of hotels on page load
+
+Allow the user to SORT (by price) and FILTER (by hotel name) the results
+
+To Do:
+
+[x] Read/understand how the API data is structured, build small set of dummy data for tests (or use API data)
+
+[x] Break into components
+
+[] Sort function - three possible views
+    [] 1. Price - lowest to highest
+    [] 2. Price - highest to lowest
+    [] 3. Recommended - (probably) Sory by rating
+[] Filter function - look for hotels that contain the characters the user types
+
+[] Tests
+    [] Sort
+    [] Filter
+    [] Server error/API returns nothing
+
+[] Extra Styling
+
+What I did:
+1. Made test array
+2. Broke pieces into componets
+3. First instinct: pass hotels called from API as props into the SearchControls
+    - if no filter/sort, show list of hotels as called by API
+    - if either/both controls used, rearragne list of hotels according to input
+    - regardless of filtering/searching,
+4. From SearchControls, pass hotels as props again to HotelList
+    - this iteration of the list will either be altered or unaltered from API depending on user input
