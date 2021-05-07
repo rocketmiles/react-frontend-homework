@@ -5,7 +5,9 @@ Allow the user to SORT (by price) and FILTER (by hotel name) the results
 
 To Do:
 
-[] Read/understand how the API data is structured, build small set of dummy data for tests (or use API data)
+[x] Read/understand how the API data is structured, build small set of dummy data for tests (or use API data)
+
+[] Break into components
 
 [] Sort function - three possible views
     [] 1. Price - lowest to highest
