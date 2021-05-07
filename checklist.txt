@@ -7,7 +7,7 @@ To Do:
 
 [x] Read/understand how the API data is structured, build small set of dummy data for tests (or use API data)
 
-[] Break into components
+[x] Break into components
 
 [] Sort function - three possible views
     [] 1. Price - lowest to highest
@@ -21,3 +21,13 @@ To Do:
     [] Server error/API returns nothing
 
 [] Extra Styling
+
+What I did:
+1. Made test array
+2. Broke pieces into componets
+3. First instinct: pass hotels called from API as props into the SearchControls
+    - if no filter/sort, show list of hotels as called by API
+    - if either/both controls used, rearragne list of hotels according to input
+    - regardless of filtering/searching,
+4. From SearchControls, pass hotels as props again to HotelList
+    - this iteration of the list will either be altered or unaltered from API depending on user input
