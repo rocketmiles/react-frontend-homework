@@ -22,10 +22,12 @@ export default function SearchControls({
 
 
             <div className="filters">
-                Hotel name
-                        <input type="text" className="input" maxLength={1} />
-                        Price
-                        <select name="" className="select">
+
+                <label htmlFor="hotel-name">Hotel name</label>
+                <input type="text" className="input" id="hotel-name" />
+
+                <label htmlFor="hotel-price">Hotel name</label>
+                <select name="hotel-price" className="select" id="hotel-price">
                     <option value="">Recommended</option>
                     <option value="">Price low-to-high</option>
                     <option value="">Price high-to-low</option>
