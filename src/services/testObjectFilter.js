@@ -1,9 +1,9 @@
 
 //test index:
-//testOne: happy path, one word matches. input 'axe', expect ['The Axe Handle Inn Minneapolis']
-//testTwo: happy path, two letter matches. input 'X', expect ['The Axe Handle Inn Minneapolis']
+//testOne: happy path, one word matches. input 'axe', expect [testOne]
+//testTwo: happy path, two letter matches. input 'X', expect [testTwo]
 //testThree: unhappy path, letters match but out of order. input 'ex', expect []
-//testFour: happy path, letters and numbers in sequence with spaces. input 'Super 8 M', expect ['Super 8 Minneapolis]
+//testFour: happy path, letters and numbers in sequence with spaces. input 'Super 8 M', expect [testFour]
 //testFive: happy path, spaces after search term. input 'Minn       ' expect [testFive]
 //testSix: unhappy path, character not found. input 'q' expect []
 //testSeven: unhappy path, user inputs only spaces. input '      ' expect [mockApi]

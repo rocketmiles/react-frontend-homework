@@ -35,7 +35,6 @@ describe('HotelFilterService', () => {
     it('is called with and empty string', () => {
         expect(hotelFilterService(testObjectFilter.mockApi, '')).toStrictEqual(testObjectFilter.mockApi);
     });
-
     it('is called without user input', () => {
         expect(hotelFilterService(testObjectFilter.mockApi)).toStrictEqual(testObjectFilter.mockApi);
     });

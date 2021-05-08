@@ -13,11 +13,11 @@ To Do:
     [x] 1. Price - lowest to highest
     [x] 2. Price - highest to lowest
     [x] 3. Recommended - (probably) Sory by rating
-[] Filter function - look for hotels that contain the characters the user types
+[x] Filter function - look for hotels that contain the characters the user types
 
 [] Tests
     [x] Sort
-    [] Filter
+    [x] Filter
     [] Server error/API returns nothing
 
 [] Extra Styling
@@ -33,3 +33,5 @@ What I did:
     - this iteration of the list will either be altered or unaltered from API depending on user input
 5. First worked on sort function, wrote tests and modeled data to work like the API, ran it through the tests until
 tests cleared, then hooked the function into the app
+6. Updated App.js to capture values from user input in both hotel name search and drop down menu
+7. Wrote tests and function for hotel-filter.service.js, current function passes test data
