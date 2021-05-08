@@ -73,3 +73,20 @@ body {
 .hotel-list{
 	width: 50%;
 }
+
+.select-button:hover{
+	background-color: #163809;
+	transition: .15s;
+}
+.reset-button:hover{
+	background-color: black;
+	transition: .15s;
+}
+.select-button:active{
+	background-color: #758d6b;
+
+}
+.reset-button:active{
+	background-color: rgb(158, 155, 155);
+
+}

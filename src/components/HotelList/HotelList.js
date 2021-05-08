@@ -37,7 +37,7 @@ export default function HotelList({
                                 {hotel.rewards.miles} miles
                                 </span>
                             <button
-                                className="button"
+                                className="button select-button"
                                 onClick={() => handleClick(hotel)}>
                                 Select
                             </button>

@@ -50,7 +50,7 @@ export default function SearchControls({ hotels }) {
                 </select>
 
                 <button
-                    className="button"
+                    className="button reset-button"
                     role="button"
                     id="reset-button"
                     onClick={() => reset()}>
