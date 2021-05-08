@@ -15,10 +15,9 @@ To Do:
     [x] 3. Recommended - (probably) Sory by rating
 [x] Filter function - look for hotels that contain the characters the user types
 
-[] Tests
+[x] Tests
     [x] Sort
     [x] Filter
-    [] Server error/API returns nothing
 
 [] Extra Styling
 

@@ -1,13 +1,17 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 
 //props passed into this component will be filtered/sorted in SearchControls
 //regardless of what SearchControls does, this component will render a list of hotels
-export default function HotelList ({
+export default function HotelList({
     hotels
 }) {
 
+    //Earmarked for further functionality. What happens when the user clicks?
+    const handleClick = (uniqueHotel) => {
+        console.log(uniqueHotel.id)
+    }
 
-    return(
+    return (
         <div>
             <div className="hotel-list">
                 {hotels.map(hotel => (
@@ -32,7 +36,11 @@ export default function HotelList ({
                             <span className="rewards">
                                 {hotel.rewards.miles} miles
                                 </span>
-                            <button className="button">Select</button>
+                            <button
+                                className="button"
+                                onClick={() => handleClick(hotel)}>
+                                Select
+                            </button>
                         </div>
                     </div>
                 ))}
