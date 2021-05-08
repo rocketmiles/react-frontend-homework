@@ -9,14 +9,14 @@ To Do:
 
 [x] Break into components
 
-[] Sort function - three possible views
-    [] 1. Price - lowest to highest
-    [] 2. Price - highest to lowest
-    [] 3. Recommended - (probably) Sory by rating
+[x] Sort function - three possible views
+    [x] 1. Price - lowest to highest
+    [x] 2. Price - highest to lowest
+    [x] 3. Recommended - (probably) Sory by rating
 [] Filter function - look for hotels that contain the characters the user types
 
 [] Tests
-    [] Sort
+    [x] Sort
     [] Filter
     [] Server error/API returns nothing
 
@@ -31,3 +31,5 @@ What I did:
     - regardless of filtering/searching,
 4. From SearchControls, pass hotels as props again to HotelList
     - this iteration of the list will either be altered or unaltered from API depending on user input
+5. First worked on sort function, wrote tests and modeled data to work like the API, ran it through the tests until
+tests cleared, then hooked the function into the app
