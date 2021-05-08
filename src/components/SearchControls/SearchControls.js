@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import hotelSortService from '../../services/hotel-sort/hotel-sort.service'
+import hotelFilterService from '../../services/hotel-filter/hotel-filter.service'
 import HotelList from '../HotelList/HotelList'
 
 
@@ -11,6 +12,8 @@ export default function SearchControls({ hotels }) {
 
     console.log(sortValue)
     console.log(filterValue)
+
+    const filteredHotelsByName = hotelFilterService(hotels, filterValue)
 
     //reset state values => return hotel list to unfiltered/unsorted
     const reset = () => {
@@ -55,7 +58,7 @@ export default function SearchControls({ hotels }) {
 
             </div>
             {/* TEMP pass in unfiltered/unsorted API results into HotelList, change to hotels={searchedHotels} once functions are built */}
-            <HotelList hotels={hotels} />
+            <HotelList hotels={filteredHotelsByName} />
         </div>
 
     )
