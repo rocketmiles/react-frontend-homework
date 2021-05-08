@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import hotelSortService from '../../services/hotel-sort/hotel-sort.service'
 import hotelFilterService from '../../services/hotel-filter/hotel-filter.service'
 import HotelList from '../HotelList/HotelList'
+import SearchFailure from '../SearchFailure/SearchFailure'
 
 
 export default function SearchControls({ hotels }) {
 
-
+    //state variables to capture user input from the hotel name filter field and the sort dropdown
     const [sortValue, setSortValue] = useState('')
     const [filterValue, setFilterValue] = useState('')
 
-    console.log(sortValue)
-    console.log(filterValue)
-
+    //information passes through to sortedHotelsByPrice every time the user types
+    //or every time the user filters with the dropdown
     const filteredHotelsByName = hotelFilterService(hotels, filterValue)
+    const sortedHotelsByPrice = hotelSortService(filteredHotelsByName, sortValue)
 
     //reset state values => return hotel list to unfiltered/unsorted
     const reset = () => {
@@ -57,8 +58,8 @@ export default function SearchControls({ hotels }) {
                 </button>
 
             </div>
-            {/* TEMP pass in unfiltered/unsorted API results into HotelList, change to hotels={searchedHotels} once functions are built */}
-            <HotelList hotels={filteredHotelsByName} />
+            {/* If the filter yields no results, sortedHotelsByPrice will be an empty array (falsy) and we call the SearchFailure component */}
+           { sortedHotelsByPrice.length ? <HotelList hotels={sortedHotelsByPrice} /> : <SearchFailure />}
         </div>
 
     )

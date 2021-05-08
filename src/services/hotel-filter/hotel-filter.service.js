@@ -5,13 +5,14 @@
  */
 
 export default function hotelFilterService(arrayToFilter, filterValue) {
-
+    //once the user starts typing, the filter starts
     if (filterValue) {
         const filterResults = arrayToFilter.filter(hotel =>
             hotel.hotelStaticContent.name.toLowerCase().includes(filterValue.trim().toLowerCase())
         )
             return filterResults
     }
+    //if the user provides no input to filter hotels by name, the function returns an unfiltered array
     else if (!filterValue) {
         return arrayToFilter
     }

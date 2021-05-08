@@ -4,8 +4,6 @@ import testObjectFilter from '../testObjectFilter'
 //all test data and results exist in testObjectFilter
 //mockApi is an abbreviation of the data called from the RocketMiles API
 //tests for checking possible user inputs for hotel name
-
-
 describe('HotelFilterService', () => {
 
     it('is called with one word that matches', () => {
