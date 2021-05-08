@@ -8,9 +8,16 @@ export default function SearchControls({ hotels }) {
 
     const [sortValue, setSortValue] = useState('')
     const [filterValue, setFilterValue] = useState('')
-    
+
     console.log(sortValue)
     console.log(filterValue)
+
+    //reset state values => return hotel list to unfiltered/unsorted
+    const reset = () => {
+        setSortValue('');
+        setFilterValue('');
+        console.log('reset')
+    }
 
     return (
         <div className="content">
@@ -40,7 +47,9 @@ export default function SearchControls({ hotels }) {
 
                 <button
                     className="button"
-                    onClick={() => console.log('reset')}>
+                    role="button"
+                    id="reset-button"
+                    onClick={() => reset()}>
                     Reset
                 </button>
 
