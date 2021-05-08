@@ -9,14 +9,14 @@ To Do:
 
 [x] Break into components
 
-[] Sort function - three possible views
+[x] Sort function - three possible views
     [x] 1. Price - lowest to highest
     [x] 2. Price - highest to lowest
-    [] 3. Recommended - (probably) Sory by rating
+    [x] 3. Recommended - (probably) Sory by rating
 [] Filter function - look for hotels that contain the characters the user types
 
 [] Tests
-    [] Sort
+    [x] Sort
     [] Filter
     [] Server error/API returns nothing
 

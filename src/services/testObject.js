@@ -1,9 +1,10 @@
-//stand-in data for API result, use when running tests: contains tests AND solutinos
-//quick find:
-//testObject.mockApi - set of data to run all tests against
-//testObject.testSortDescending - for sort test, highest to lowest
-//testObject.testSortAscending - for sort test, lowest to highest
-//testObject.testSortRecommended - for sort test, sorts by rating highest to lowest
+//stand-in data for API result, use when running tests: contains tests AND solutions
+
+//testObject.mockApi = set of data to run all tests against
+//testObject.testSortDescending = for sort test, highest to lowest
+//testObject.testSortAscending = for sort test, lowest to highest
+//testObject.testSortRecommended = for sort test, sorts by rating highest to lowest
+
 const testObject = {
     mockApi:
         [
