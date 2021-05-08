@@ -11,6 +11,10 @@ describe('HotelSortService', () => {
         expect(HotelSortService(testObject.mockApi, 'ascending')).toStrictEqual(testObject.testSortAscending);
     });
 
+    it('sorts hotel prices descending from highest rating to lowest rating', () => {
+        expect(HotelSortService(testObject.mockApi, 'recommended')).toStrictEqual(testObject.testSortRecommended);
+    });
+
     it('is called without user input on sort method', () => {
         expect(HotelSortService(testObject.mockApi)).toStrictEqual(testObject.mockApi);
     });

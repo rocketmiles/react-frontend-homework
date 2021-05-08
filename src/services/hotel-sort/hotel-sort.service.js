@@ -1,3 +1,7 @@
+//HotelSortService takes in the hotel list from the API and the direction for sorting from the user
+//by using the built in .sort() method, the function sorts hotels at lowestAveragePrice
+//This sort makes the assumtion that the values at rating and amount will always be numbers
+
 export default function HotelSortService(arrayToSort, direction) {
 
     const hotelSort = arrayToSort.sort((a, b) => {
@@ -9,7 +13,9 @@ export default function HotelSortService(arrayToSort, direction) {
                 return a.lowestAveragePrice.amount - b.lowestAveragePrice.amount;
             case 'recommended':
                 return b.hotelStaticContent.rating - a.hotelStaticContent.rating;
+
             default:
+                //if the function is called without user input, the input array is returned unsorted
                 console.error('issue sorting, hotel results are returned unsorted')
                 return arrayToSort
         }
