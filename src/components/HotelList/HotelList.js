@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import HotelDetail from '../HotelDetail/HotelDetail'
 
 //props passed into this component will be filtered/sorted in SearchControls
 //regardless of what SearchControls does, this component will render a list of hotels
@@ -6,9 +7,13 @@ export default function HotelList({
     hotels
 }) {
 
+    const [seeDetails, setSeeDetails] = useState(false)
+    const [hotelDetails, setHotelDetails] = useState('')
     //Earmarked for further functionality. What happens when the user clicks?
     const handleClick = (uniqueHotel) => {
         console.log(uniqueHotel.id)
+        setSeeDetails(true)
+        setHotelDetails(uniqueHotel)
     }
 
     return (
@@ -45,6 +50,7 @@ export default function HotelList({
                     </div>
                 ))}
             </div>
+            {seeDetails ? <HotelDetail hotelDetails={hotelDetails}/>: <span></span>}
         </div>
     )
 }
